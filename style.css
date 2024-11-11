@@ -8,7 +8,7 @@ body, html {
 }
 
 .app-container {
-    background: linear-gradient(135deg, #007bff, #00c6ff);
+    background: linear-gradient(135deg, #fff);
     color: #fff;
     text-align: center;
     min-height: 100vh;
@@ -24,8 +24,8 @@ body, html {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
 }
 
 .logo {
