@@ -1,14 +1,106 @@
-body {
+/* Set background for the app */
+body, html {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-button {
-    background-color: #0088cc;
-    color: white;
+.app-container {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Logo styling */
+.logo-holder {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+/* Centered image styling */
+.image-holder {
+    margin-top: 100px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.product-image {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+/* Scroll content styling */
+.content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.card {
+    background: #fff;
+    color: #007bff;
+    padding: 15px 30px;
+    border-radius: 8px;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide content when scrolling up */
+.hide-image {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.show-content {
+    display: flex;
+    opacity: 1;
 }

@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Telegram Mini App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Welcome to Telegram Mini App</h1>
-    <button onclick="sendMessage()">Send Message to Bot</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Logo holder at the top -->
+      <div class="logo-holder">
+        <img src="Logo.png" alt="App Logo" class="logo" />
+      </div>
+
+      <!-- Product image in the center -->
+      <div class="image-holder" id="imageHolder">
+        <img
+          src="main-text.png"
+          alt="Product Image"
+          class="product-image"
+        />
+      </div>
+
+      <!-- Content with buttons that appear when scrolled -->
+      <div class="content" id="scrollContent">
+        <h1>Welcome to Telegram Mini App</h1>
+        <div class="card-container">
+          <button class="card">Card 1</button>
+          <button class="card">Card 2</button>
+          <button class="card">Card 3</button>
+        </div>
+        <button onclick="sendMessage()">Send Message to Bot</button>
+      </div>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
