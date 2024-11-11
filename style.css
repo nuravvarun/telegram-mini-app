@@ -8,7 +8,7 @@ body, html {
 }
 
 .app-container {
-    background: linear-gradient(135deg, #fff);
+    background: #ffffffe6;
     color: #fff;
     text-align: center;
     min-height: 100vh;
