@@ -1,102 +1,110 @@
 /* Set background for the app */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
-    overflow-x: hidden;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .app-container {
-    background: #ffffffe6;
-    color: #ffffffe6;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    linear-gradient(to right, #3a6ef2, #5f3ef2);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
 
 /* Logo styling */
 .logo-holder {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 180px;
+  position: fixed;
+  top: 5px;
+  width: 180px;
+  height: 41px;
+  background: #fff;
+  width: 95%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .logo {
-    width: 100%;
-    height: auto;
+  width: 60%;
+  height: auto;
 }
 
 /* Centered image styling */
 .image-holder {
-    margin-top: 100px;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  margin-top: 30px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .product-image {
-    width: 80%;
-    max-width: 300px;
-    border-radius: 8px;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 8px;
 }
 
 /* Scroll content styling */
 .content {
-    flex-direction: row;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-    margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
 }
 
 .card-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .card {
-    background: #fff;
-    color: #007bff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  background: #fff;
+  color: #007bff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-
 
 /* Button styling */
 button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    transition: background 0.3s ease;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Hide content when scrolling up */
 .hide-image {
-    opacity: 0;
-    transform: translateY(-100%);
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 .show-content {
-    display: flex;
-    opacity: 1;
+  display: flex;
+  opacity: 1;
 }
