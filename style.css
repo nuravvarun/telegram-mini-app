@@ -43,7 +43,7 @@ html {
 
 /* Centered image styling */
 .image-holder {
-  margin-top: 20px;
+  margin: 20px 0px;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
