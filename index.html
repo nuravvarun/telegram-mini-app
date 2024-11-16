@@ -17,19 +17,23 @@
       <div class="image-holder" id="imageHolder">
         <img src="panda-robo.png" alt="Product Image" class="product-image" />
       </div>
+      <!--Product Text-->
+      <div>
+        <h2>Get Started with Our Smart Security Tools!</h2>
+      </div>
 
       <!-- Content with buttons that appear when scrolled -->
       <div class="container">
         <div class="dropdown">
-          <select id="toolSelect">
+          <select id="toolSelect" style="width: 65%">
             <option value="fraud-detector">Fraud Detector</option>
             <option value="wallet-scanner">Wallet Auditor</option>
             <option value="contract-analyzer">Rug Pull Detector</option>
           </select>
-          <select id="networkSelect">
+          <select id="networkSelect" style="width: 33%">
             <option value="ethereum">Ethereum</option>
             <option value="polygon">Polygon</option>
-            <option value="binance-smart-chain">Binance Smart Chain</option>
+            <option value="binance-smart-chain">BSC</option>
           </select>
         </div>
         <div class="input-container">
@@ -38,7 +42,6 @@
             id="inputText"
             placeholder="Address, ENS or Unstoppable Domain"
           />
-          <span class="search-icon" onclick="submitForm()">🔍</span>
         </div>
         <button onclick="submitForm()">Search</button>
       </div>
