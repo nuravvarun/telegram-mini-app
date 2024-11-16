@@ -53,52 +53,83 @@ html {
 }
 
 /* Scroll content styling */
-.content {
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.container h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.card-container {
+.dropdown {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.card {
-  background: #fff;
-  color: #007bff;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-/* Button styling */
-button {
-  padding: 10px 20px;
-  margin-top: 10px;
+select {
+  width: 48%;
+  padding: 10px;
+  border-radius: .75rem !important;
+  border: 1px solid #ccc;
+  background-color: rgb(41 48 54 / 1);
   font-size: 16px;
+  color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M2%204L0%202h4z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 10px;
+  cursor: pointer;
+  height: 3.75rem;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #f0f0f0;
+}
+
+input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: #0088cc;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0088cc;
+  color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
-}
-
-/* Hide content when scrolling up */
-.hide-image {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-.show-content {
-  display: flex;
-  opacity: 1;
+  background-color: #005f99;
 }

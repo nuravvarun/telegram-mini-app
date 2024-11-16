@@ -19,12 +19,28 @@
       </div>
 
       <!-- Content with buttons that appear when scrolled -->
-      <div class="content" id="scrollContent">
-        <div class="card-container">
-          <img src="card-1.svg" alt="Card 1" class="card" >
-          <img src="card-2.svg" alt="Card 2" class="card" >
-          <img src="card-3.svg" alt="Card 3" class="card" >
+      <div class="container">
+        <div class="dropdown">
+          <select id="toolSelect">
+            <option value="fraud-detector">Fraud Detector</option>
+            <option value="wallet-scanner">Wallet Auditor</option>
+            <option value="contract-analyzer">Rug Pull Detector</option>
+          </select>
+          <select id="networkSelect">
+            <option value="ethereum">Ethereum</option>
+            <option value="polygon">Polygon</option>
+            <option value="binance-smart-chain">Binance Smart Chain</option>
+          </select>
         </div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="inputText"
+            placeholder="Address, ENS or Unstoppable Domain"
+          />
+          <span class="search-icon" onclick="submitForm()">🔍</span>
+        </div>
+        <button onclick="submitForm()">Search</button>
       </div>
     </div>
     <script src="app.js"></script>
