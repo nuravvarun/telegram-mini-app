@@ -31,5 +31,6 @@ Telegram.WebApp.close();
 // });
 
 function sendMessage() {
+    
     alert("Message sent to bot!");
 }
