@@ -1,0 +1,46 @@
+{
+  "name": "chainaware-telegram-mini-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://nuravvarun.github.io/telegram-mini-app",
+  "scripts": {
+    "deploy": "npm run build && aws s3 sync ./dist s3://tmatest --region eu-central-1 --delete",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
+    "preview": "vite preview",
+    "predeploy": "npm run build"
+  },
+  "dependencies": {
+    "@telegram-apps/sdk-react": "^2.0.10",
+    "@telegram-apps/telegram-ui": "^2.1.5",
+    "aws-cli": "^0.0.2",
+    "eruda": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.2.0",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "gh-pages": "^6.1.1",
+    "globals": "^15.2.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0",
+    "vite": "^5.2.11",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-tsconfig-paths": "^4.3.2"
+  }
+}
