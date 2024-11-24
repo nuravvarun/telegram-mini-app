@@ -17,12 +17,12 @@ const root = ReactDOM.createRoot(document.getElementById('root')!);
 try {
   // Configure all application dependencies.
   init(retrieveLaunchParams().startParam === 'debug' || import.meta.env.DEV);
-
+  console.log(retrieveLaunchParams());
   root.render(
     <StrictMode>
-      <Root/>
+      <Root />
     </StrictMode>,
   );
 } catch (e) {
-  root.render(<EnvUnsupported/>);
+  root.render(<EnvUnsupported />);
 }
