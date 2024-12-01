@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, type FC } from 'react';
-import { Page } from '@/components/Page.tsx';
 import LogoHolder from '@/components/LogoHolder/Logoholder';
 import MascotImageHolder from '@/components/MascotImageHolder/MascotImageHolder';
 import axios from "axios";
