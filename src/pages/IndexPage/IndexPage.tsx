@@ -27,7 +27,6 @@ export const IndexPage: FC = () => {
     };
 
     const headers = {
-      "x-api-key": "U2FsdGVkX18CcMe1wBKIwPmWOBY7NAIU2FsdGVkX18CcMe1wBKIwPmWOBY7NAIDD",
     };
 
     try {
