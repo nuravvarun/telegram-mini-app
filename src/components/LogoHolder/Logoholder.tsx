@@ -1,4 +1,4 @@
-import Logo from "../../../assets/Logo.svg"; // Adjust path based on where you store assets
+import Logo from "../../../assets/Logo.svg";
 
 const LogoHolder = () => {
     return (

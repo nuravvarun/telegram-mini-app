@@ -1,0 +1,41 @@
+
+URL = "https://t.me/sampleChain_Bot?startapp=ABC"
+Object= {
+    "initData": {
+        "authDate": "2024-11-24T14:36:13.000Z",
+        "chatInstance": "-5313683377441717132",
+        "chatType": "sender",
+        "hash": "86a802f716446c2487e40395741f8b145afec372549d4cb2c09052c5beb3131f",
+        "startParam": "ABC",
+        "user": {
+            "allowsWriteToPm": true,
+            "firstName": "Varun",
+            "id": 78433045,
+            "languageCode": "en",
+            "lastName": "Sachdeva",
+            "photoUrl": "https://t.me/i/userpic/320/-0b8RAh9wjaeju77FRlq_a58enRuBDg1YdTwW81ZdJ0.svg",
+            "username": "Varun95"
+        }
+    },
+    "initDataRaw": "user=%7B%22id%22%3A78433045%2C%22first_name%22%3A%22Varun%22%2C%22last_name%22%3A%22Sachdeva%22%2C%22username%22%3A%22Varun95%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2F-0b8RAh9wjaeju77FRlq_a58enRuBDg1YdTwW81ZdJ0.svg%22%7D&chat_instance=-5313683377441717132&chat_type=sender&start_param=ABC&auth_date=1732458973&signature=ah_A8lhMLFqoYBFSGIW73lDTlLrd2g_fpgRkxrH_Db1Ha6CwjowNbqg-RfTK66oAHd8xDmqwkIX7cpUUNnSVAg&hash=86a802f716446c2487e40395741f8b145afec372549d4cb2c09052c5beb3131f",
+    "platform": "tdesktop",
+    "startParam": "ABC",
+    "themeParams": {
+        "accentTextColor": "#eea4a0",
+        "bgColor": "#282e33",
+        "bottomBarBgColor": "#282e33",
+        "buttonColor": "#d27570",
+        "buttonTextColor": "#ffffff",
+        "destructiveTextColor": "#f57474",
+        "headerBgColor": "#282e33",
+        "hintColor": "#82868a",
+        "linkColor": "#e97e80",
+        "secondaryBgColor": "#313b43",
+        "sectionBgColor": "#282e33",
+        "sectionHeaderTextColor": "#e97e80",
+        "sectionSeparatorColor": "#242a2e",
+        "subtitleTextColor": "#82868a",
+        "textColor": "#f5f5f5"
+    },
+    "version": "8.0"
+}
