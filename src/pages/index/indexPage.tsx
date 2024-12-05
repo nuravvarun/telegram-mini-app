@@ -3,10 +3,10 @@
 import { useEffect, useState, type FC } from 'react';
 import LogoHolder from '@/components/LogoHolder/Logoholder';
 import MascotImageHolder from '@/components/MascotImageHolder/MascotImageHolder';
-import axios from "axios";
 import { Network, Tool } from '@/helpers/types';
 import { useNavigate } from 'react-router-dom';
 import { initData, useSignal } from '@telegram-apps/sdk-react';
+import { getRequest, postRequest } from '@/api/apiService';
 
 
 export const IndexPage: FC = () => {
@@ -19,38 +19,37 @@ export const IndexPage: FC = () => {
 
   useEffect(() => {
     // Simulate API call to fetch forensic details
-    const fetchData = async () => {
-      console.log(initDataState?.startParam, initDataState?.user?.username)
+    const subscribeUser = async () => {
+      // subscribe to chainaware.io 
+      await getRequest("/users/subscribe-telegram", { token: initDataState?.startParam, user_id: initDataState?.user?.id });
     };
-    fetchData();
+
+    if (initDataState?.startParam !== undefined) {
+      subscribeUser();
+    }
   }, [])
 
 
   const handleSearch = async () => {
     const apiUrlMap: Record<Tool, string> = {
-      "fraud-check": "https://dev.backend.chainaware.ai/api/fraud/check",
-      "wallet-audit": "https://dev.backend.chainaware.ai/api/fraud/audit",
-      "rug-pull-check": "https://dev.backend.chainaware.ai/api/rug/pull-check",
+      "fraud-check": "/fraud/check",
+      "wallet-audit": "/fraud/audit",
+      "rug-pull-check": "/rug/pull-check",
     };
 
     const requestBodyMap: Record<Tool, object> = {
-      "fraud-check": { network: network, walletAddress: inputText, onlyFraud: true },
-      "wallet-audit": { network: network, walletAddress: inputText },
-      "rug-pull-check": { network: network, contractAddress: inputText },
+      "fraud-check": { network: network, walletAddress: inputText, onlyFraud: true, chatId: initDataState?.user?.id },
+      "wallet-audit": { network: network, walletAddress: inputText, chatId: initDataState?.user?.id },
+      "rug-pull-check": { network: network, contractAddress: inputText, chatId: initDataState?.user?.id },
     };
 
-    const headers = {
-      "x-api-key": "",
-    };
 
     try {
-      const response = await axios.post(apiUrlMap[tool], requestBodyMap[tool], {
-        headers,
-      });
+      const response = await postRequest(apiUrlMap[tool], requestBodyMap[tool]);
 
       // alert(`Response: ${JSON.stringify(response.data, null, 2)}`);
 
-      navigate('/result', { state: response.data });
+      navigate('/result', { state: response });
     } catch (error: any) {
       console.error("API call failed:", error);
       alert(`Error: ${error.response ? error.response.data.message : error.message}`);
