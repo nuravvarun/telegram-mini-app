@@ -1,9 +1,12 @@
 import type { ComponentType, JSX } from 'react';
 
-import { IndexPage } from '@/pages/IndexPage/IndexPage';
 import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
+import { AuditResult } from '@/pages/auditor/ResultPage';
+import { FraudDetectorResult } from '@/pages/fraud-detector/ResultPage';
+import { RugPullDetectorResult } from '@/pages/rug-pull-detector/ResultPage';
+import { IndexPage } from '@/pages/indexPage/IndexPage';
 
 interface Route {
   path: string;
@@ -14,6 +17,9 @@ interface Route {
 
 export const routes: Route[] = [
   { path: '/', Component: IndexPage },
+  { path: '/audit/result', Component: AuditResult },
+  { path: '/fraud-detector/result', Component: FraudDetectorResult },
+  { path: '/rug-pull-detector/result', Component: RugPullDetectorResult },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' }
