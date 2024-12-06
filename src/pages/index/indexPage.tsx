@@ -6,7 +6,7 @@ import MascotImageHolder from '@/components/MascotImageHolder/MascotImageHolder'
 import { Network, Tool } from '@/helpers/types';
 import { useNavigate } from 'react-router-dom';
 import { initData, useSignal } from '@telegram-apps/sdk-react';
-import { getRequest, postRequest } from '@/api/apiService';
+import { postRequest } from '@/api/apiService';
 
 
 export const IndexPage: FC = () => {
@@ -21,7 +21,7 @@ export const IndexPage: FC = () => {
     // Simulate API call to fetch forensic details
     const subscribeUser = async () => {
       // subscribe to chainaware.io 
-      await getRequest("/users/subscribe-telegram", { token: initDataState?.startParam, user_id: initDataState?.user?.id });
+      await postRequest("/users/subscribe-telegram", { token: initDataState?.startParam, user_id: initDataState?.user?.id });
     };
 
     if (initDataState?.startParam !== undefined) {
