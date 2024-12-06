@@ -1,1 +1,1 @@
-export const API_BASE_URL = process.env.APP_API_BASE_URL || "";
+export const API_BASE_URL = "https://dev.backend.chainaware.ai/api";
