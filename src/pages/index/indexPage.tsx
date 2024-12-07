@@ -9,7 +9,7 @@ import { postRequest } from '@/api/apiService';
 
 
 export const IndexPage: FC = () => {
-  const [tool, setTool] = useState<Tool>("fraud-check");
+  const [tool, setTool] = useState<Tool>("fraud-detector");
   const [network, setNetwork] = useState<Network>("ETH");
   const [inputText, setInputText] = useState("");
   const navigate = useNavigate();
@@ -23,32 +23,39 @@ export const IndexPage: FC = () => {
       await postRequest("/users/subscribe-telegram", { token: initDataState?.startParam, user_id: initDataState?.user?.id });
     };
 
-    if (initDataState?.startParam !== undefined) {
-      subscribeUser();
-    }
+    // if (initDataState?.startParam !== undefined ) {
+    //   subscribeUser();
+    // }
   }, [])
 
 
   const handleSearch = async () => {
     const apiUrlMap: Record<Tool, string> = {
-      "fraud-check": "/fraud/check",
-      "wallet-audit": "/fraud/audit",
-      "rug-pull-check": "/rug/pull-check",
+      "fraud-detector": "/fraud/check",
+      "audit": "/fraud/audit",
+      "rug-pull-detector": "/rug/pull-check",
     };
 
     const requestBodyMap: Record<Tool, object> = {
-      "fraud-check": { network: network, walletAddress: inputText, onlyFraud: true, chatId: initDataState?.user?.id },
-      "wallet-audit": { network: network, walletAddress: inputText, chatId: initDataState?.user?.id },
-      "rug-pull-check": { network: network, contractAddress: inputText, chatId: initDataState?.user?.id },
+      "fraud-detector": { network: network, walletAddress: inputText, onlyFraud: true },
+      "audit": { network: network, walletAddress: inputText, chatId: initDataState?.user?.id },
+      "rug-pull-detector": { network: network, contractAddress: inputText, chatId: initDataState?.user?.id },
     };
 
 
     try {
-      const response = await postRequest(apiUrlMap[tool], requestBodyMap[tool]);
+      postRequest(apiUrlMap[tool], requestBodyMap[tool])
+        .then((response) => {
+          if (response) {
+            navigate(`/${tool}/result`, { state: response });
+          } else {
+            console.error("Response is undefined or null.");
+          }
+        })
+        .catch((error) => {
+          console.error("An error occurred:", error);
+        });
 
-      // alert(`Response: ${JSON.stringify(response.data, null, 2)}`);
-
-      navigate('/result', { state: response });
     } catch (error: any) {
       console.error("API call failed:", error);
       alert(`Error: ${error.response ? error.response.data.message : error.message}`);

@@ -1,4 +1,4 @@
-export type Tool = "fraud-check" | "wallet-audit" | "rug-pull-check";
+export type Tool = "fraud-detector" | "audit" | "rug-pull-detector";
 export type Network = "ETH" | "POLYGON" | "BNB";
 
 export type OptionType = {
