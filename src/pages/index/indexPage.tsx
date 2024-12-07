@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, type FC } from 'react';
-import LogoHolder from '@/components/LogoHolder/Logoholder';
 import MascotImageHolder from '@/components/MascotImageHolder/MascotImageHolder';
 import { Network, Tool } from '@/helpers/types';
 import { useNavigate } from 'react-router-dom';
@@ -62,7 +61,6 @@ export const IndexPage: FC = () => {
 
   return (
     <div>
-      <LogoHolder />
       <MascotImageHolder />
       <div className="bg-[#fff9] flex flex-col w-11/12 justify-center m-auto rounded-2xl gap-2 p-2">
         <div className="flex gap-1 h-14">

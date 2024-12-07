@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@telegram-apps/sdk-react": "^2.0.10",
-    "@telegram-apps/telegram-ui": "^2.1.5",
     "@types/react-select": "^5.0.1",
     "aws-cli": "^0.0.2",
     "axios": "^1.7.8",
