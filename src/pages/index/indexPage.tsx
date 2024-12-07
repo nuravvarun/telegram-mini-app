@@ -60,7 +60,7 @@ export const IndexPage: FC = () => {
   }
 
   return (
-    <div>
+    <div className='h-screen'>
       <MascotImageHolder />
       <div className="bg-[#fff9] flex flex-col w-11/12 justify-center m-auto rounded-2xl gap-2 p-2">
         <div className="flex gap-1 h-14">
